@@ -1,15 +1,32 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-    "http://www.w3.org/TR/html4/loose.dtd">
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page session="false" %>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Aprendendo Spring</title>
-    </head>
+<head>
+    <title>Upload File Request Page</title>
+    <!--<link rel="stylesheet" type="text/css" href="css/estilo.css">-->
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: smaller;
+            padding: 50px;
+            color: #555;
+        }
+        form {
+        text-align: left;
+        letter-spacing: 3px;
+        font-size: medium;
+        color: #000000;
+        font-weight: normal;
+        width: 400px;
+        }
+    </style>
+</head>
 
-    <body>
-        <p>Hello! This is the default welcome page for a Spring Web MVC project.</p>
-        
-    </body>
+<body>
+    <form method="POST" action="uploadFile" enctype="multipart/form-data">
+        File to upload: <input type="file" name="file"><br /> 
+        Name: <input type="text" name="name"><br /> <br /> 
+        <input type="submit" value="Upload"> Press here to upload the file!
+    </form>
+</body>
 </html>
